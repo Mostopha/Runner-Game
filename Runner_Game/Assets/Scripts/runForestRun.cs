@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class runForestRun : MonoBehaviour {
  
-    public float velocity=1;
+    public float velocity=100;
     private Transform tr;
+    private Rigidbody2D rb;
 
 	// Use this for initialization
 	void Start () {
 
-        
+        rb = gameObject.GetComponent<Rigidbody2D>();
 
         tr = gameObject.transform;
 	}
@@ -18,9 +19,10 @@ public class runForestRun : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-      
 
-        tr.position += Vector3.right * Time.deltaTime * velocity;
+        rb.velocity = new Vector2(velocity, rb.velocity.y);
+
+        //tr.position += Vector3.right * Time.deltaTime * velocity;
 
     }
 }
