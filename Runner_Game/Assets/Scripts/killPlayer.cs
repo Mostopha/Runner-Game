@@ -15,7 +15,7 @@ public class killPlayer : MonoBehaviour {
     {
         if (col.gameObject.tag == "Player")
         {
-            col.gameObject.GetComponent<MeshRenderer>().enabled = false;
+            Destroy(col.gameObject);
 
             Invoke("Restart", 2.0f);
         }
